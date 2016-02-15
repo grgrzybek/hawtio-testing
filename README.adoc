@@ -1,4 +1,16 @@
+
 = hawtio testing infrastructure
 
 The goal of this project is to provide configurable environment that can simulate multiple link:http://hawt.io[hawtio]
-back-end servers (e.g., JBoss Fuse).
+kinds of configurations of back-end servers (e.g., JBoss Fuse).
+
+link:http://hawt.io[hawtio] console can connect to any remote link:http://jolokia.org[Jolokia agent] and provide
+hawt web UI for managing JMX beans exposed by agent.
+
+== A need for simulation
+
+Sometimes we'd like to connect to Fuse server that exposes information about thousands of ActiveMQ queues and tens of
+Apache Camel contexts - it may be hard to set up such environment, especially if we lack server infrastructure.
+
+That's why hawtio-testing was created. Just add it as Maven dependency, add some _plugins_ to classpath, run
+`mvn jetty:run` and point your link:http://hawt.io[hawtio] console to started Jetty instance.
