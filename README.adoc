@@ -1,0 +1,4 @@
+= hawtio testing infrastructure
+
+The goal of this project is to provide configurable environment that can simulate multiple link:http://hawt.io[hawtio]
+back-end servers (e.g., JBoss Fuse).
